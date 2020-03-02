@@ -45,7 +45,7 @@ resource "digitalocean_droplet" "droplet" {
   monitoring         = var.monitoring
   ipv6               = var.ipv6
   private_networking = var.private_networking
-  ssh_keys           = var.ssh_keys
+  ssh_keys           = list(var.ssh_keys)
   resize_disk        = var.resize_disk
   tags               = compact(concat(var.tags, digitalocean_tag.default_tag.*.name, list("")))
   user_data          = var.user_data
