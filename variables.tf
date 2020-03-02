@@ -169,7 +169,8 @@ variable "resize_disk" {
 
 variable "ssh_keys" {
   description = "(Optional) A list of SSH IDs or fingerprints to enable in the format [12345, 123456]. To retrieve this info, use a tool such as curl with the DigitalOcean API, to retrieve them."
-  default     = [26727297]
+  type = list(string)
+  default     = []
 }
 
 variable "tags" {
